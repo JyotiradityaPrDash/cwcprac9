@@ -10,12 +10,15 @@ public static void main(String[] args) {
 	
 	System.out.println("Enter 2nd String");
 	String s2 = sc.nextLine();
+	String s2_lower= s2.toLowerCase();
+	String s2_upper=s2.toUpperCase();
 	
 			char [] arr=new char[256];
 			System.out.println();
 			
 			for(int i=0;i<s2.length();i++){
-				arr[s2.charAt(i)]++;
+				arr[s2_lower.charAt(i)]++;
+				arr[s2_upper.charAt(i)]++;
 			}
 			
 			String Str =" ";
