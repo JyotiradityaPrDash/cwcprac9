@@ -1,0 +1,32 @@
+import java.util.Scanner;
+public class Column{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int maxn = (n+1)/2;
+
+        for(int j = 1 ; j <= maxn ; j++){
+            for(int k = 1 ; k <= maxn-j ; k++)
+                System.out.print(" ");
+
+            for(int k = j ; k > 0 ; k--)
+                System.out.print(k);
+
+            for(int k = 2 ; k <= j ; k++)
+                System.out.print(k);
+            System.out.println();
+        }
+        for(int j = maxn-1 ; j > 0 ; j--){
+            for(int k = 1 ; k <= maxn-j ; k++)
+                System.out.print(" ");
+
+            for(int k = j ; k > 0 ; k--)
+                System.out.print(k);
+
+            for(int k = 2 ; k <= j ; k++)
+                System.out.print(k);
+
+            System.out.println();
+        }
+    }    
+}
