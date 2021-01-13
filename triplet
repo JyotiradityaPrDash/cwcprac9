@@ -1,0 +1,53 @@
+import java.util.Scanner;
+public class Triplet
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int arr[] = new int[size];
+        for(int i=0;i<size;i++)
+            arr[i] = sc.nextInt();
+        int sum = sc.nextInt();
+        int trip[] = new int[3];
+        int count = 0;
+        for(int i=0; i<size; i++)
+        {
+            if(count<2)
+            {
+                count = 0;
+                trip[count++] = arr[i];
+            }
+            else
+                break;
+            for(int j=0; j<size;j++)
+            {
+                if(i==j)
+                    continue;
+                if(count<3)
+                {
+                    count = 1;
+                    trip[count++] = arr[j];
+                }
+                else
+                    break;
+                if(arr[j]<sum && trip[count-1]+arr[j]<sum)
+                {
+                    for(int k=0; k<size; k++)
+                    {
+                        if(k==i||k==j)
+                            continue;
+                        else if(arr[k]<sum && trip[count-1]+trip[count-2]+arr[k]==sum)
+                        {
+                            trip[count++]=arr[k];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if(count>2)
+            System.out.println(trip[0]+", "+trip[1]+", "+trip[2]);
+        else
+            System.out.println("No Triplets found!");
+    }
+}
