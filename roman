@@ -1,0 +1,29 @@
+import java.util.*;
+public class roman 
+{ 
+   
+    public static void main(String []args) 
+    { 
+        String thous[] = {"", "M"}; 
+        String hund[] = {"", "C", "CC", "CCC", "CD", "D",  
+                            "DC", "DCC", "DCCC", "CM"}; 
+        String ten[] = {"", "X", "XX", "XXX", "XL", "L",  
+                            "LX", "LXX", "LXXX", "XC"}; 
+        String one[] = {"", "I", "II", "III", "IV", "V",  
+                            "VI", "VII", "VIII", "IX"}; 
+              
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter the number: ");
+       int x=sc.nextInt();
+       try{
+        String val = thous[x/1000] + hund[(x%1000)/100] + ten[(x%100)/10] + one[x%10]; 
+       
+       
+        System.out.println("The number in Roman is "+val); 
+       }
+        catch (Exception e) {
+           System.out.println("Please enter a number between 0 to 1000 only.");
+       }
+    } 
+  
+}
